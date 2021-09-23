@@ -1,17 +1,42 @@
-import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView} from "react-native";
+import React, { useState } from 'react';
+import { StyleSheet, Text, Modal, TouchableOpacity, View, Image, ScrollView} from "react-native";
 import MonthSummary from '../components/Month';
 import Bill from '../components/Bill';
-import UpcomingBill from "../components/Upcoming";
+import UpcomingBill from '../components/Upcoming';
+
+import firebase from 'firebase';
 
 export default function OverviewScreen() {
+
+    const [settingsOpen, setSettingsOpen] = useState(false);
+
+    const onLogout = () => {
+        firebase.auth().signOut()
+    }
+
     return (
         <View style={styles.container}>
+            <Modal visible={settingsOpen}>
+                <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>    
+                    <TouchableOpacity 
+                        style={{marginBottom: 50}}
+                        onPress={() => onLogout()}
+                    >
+                        <Text>Logout</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setSettingsOpen(false)}>
+                        <Text>Close</Text>
+                    </TouchableOpacity>
+                </View>
+            </Modal>
             <View style={styles.topPanel}>
-                <TouchableOpacity style={styles.menu}>
+                <TouchableOpacity 
+                    style={styles.menu}
+                    onPress={() => setSettingsOpen(true)}
+                >
                     <Image
                     style={styles.menuImage}
-                    source={require("../assets/menu.png")}
+                    source={require('../assets/menu.png')}
                     />
                 </TouchableOpacity>
                 <Text style={styles.title}>Overview</Text>
@@ -61,6 +86,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 60,
         right: 40,
+        zIndex: 1
     },
     menuImage: {
         width: 30,
