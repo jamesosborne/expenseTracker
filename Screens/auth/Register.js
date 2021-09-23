@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import {  SimpleLineIcons } from '@expo/vector-icons'
 
 
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     },
     clouds : {
         height: 300,
-        width: 400,
+        width: 420,
         position: 'absolute',
         top: '15%',
         left: '50%',

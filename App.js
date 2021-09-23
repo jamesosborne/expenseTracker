@@ -71,7 +71,7 @@ export default function App() {
     <NavigationContainer>
       <View style={styles.container}>
         <Tabs.Navigator>
-            <Tabs.Screen options={{headerShown: false, tabBarShowLabel: false,tabBarIcon: ({focused}) =>(<MaterialIcons name='auto-awesome-mosaic' color='orange' size={35}/>)}} name='Overview' component={OverviewScreen}/>
+            <Tabs.Screen options={{headerShown: false, tabBarShowLabel: false,tabBarIcon: ({focused}) =>(<MaterialIcons name='auto-awesome-mosaic' color='lightgrey' size={35}/>)}} name='Overview' component={OverviewScreen}/>
             <Tabs.Screen options={{headerShown: false, tabBarShowLabel: false, tabBarIcon: ({focused}) =>(<MaterialIcons name='pie-chart' color='lightgrey' size={35}/>)}} name='Report' component={ReportScreen}/>
             <Tabs.Screen options={{headerShown: false, tabBarShowLabel: false, tabBarIcon: ({focused}) =>(<MaterialIcons name='add-box' color='lightgrey' size={35}/>)}} name='Add Bill' component={AddBillScreen}/>
         </Tabs.Navigator>

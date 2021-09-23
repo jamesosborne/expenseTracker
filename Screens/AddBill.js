@@ -5,20 +5,6 @@ import Form from "../components/Form";
 export default function AddBillScreen() {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.back}>
-        <Image
-          style={styles.backImage}
-          source={require("../assets/back.png")}
-        />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.menu}>
-        <Image
-          style={styles.menuImage}
-          source={require("../assets/menu.png")}
-        />
-      </TouchableOpacity>
-
       <Text style={styles.title}>Add a bill</Text>
       <Form />
       <TouchableOpacity style={styles.addButton}>
